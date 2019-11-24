@@ -1,0 +1,48 @@
+﻿<!doctype html>
+<html>
+<head>
+    <script>
+        function Hesapla(operator) {
+            var Par1 = document.getElementById("Par1").value;
+            var Par2 = document.getElementById("Par2").value;
+            par1 = parseInt(Par1);
+            par2 = parseInt(Par2);
+            var result = 0;
+
+            if (operator == "-") {
+                result = par1 - par2;
+            }
+
+            else if (operator == "+") {
+                result = par1 + par2;
+            }
+
+
+            else if (operator == "*") {
+                result = par1 * par2;
+            }
+
+
+            else if (operator == "/") {
+                result = par1 / par2;
+            }
+
+            document.getElementById("result").innerHTML = result;
+
+
+        }
+            
+    </script>
+</head>
+<body>
+    <input type="text" id="Par1" />
+    <input type="text" id="Par2" />
+    <br />
+    <input type="button" value="Topla"  onclick="Hesapla('+');"/>
+    <input type="button" value="Cikart"  onclick="Hesapla('-');"/>
+    <input type="button" value="Carp"  onclick="Hesapla('*');"/>
+    <input type="button" value="Bol"  onclick="Hesapla('/');"/>
+    <hr />
+    <div id= "result">Sonuc</div>
+</body>
+</html>
