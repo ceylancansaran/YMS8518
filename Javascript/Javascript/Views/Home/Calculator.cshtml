@@ -9,24 +9,8 @@
             par2 = parseInt(Par2);
             var result = 0;
 
-            if (operator == "-") {
-                result = par1 - par2;
-            }
-
-            else if (operator == "+") {
-                result = par1 + par2;
-            }
-
-
-            else if (operator == "*") {
-                result = par1 * par2;
-            }
-
-
-            else if (operator == "/") {
-                result = par1 / par2;
-            }
-
+            result = eval(par1 + operator + par2);
+          
             document.getElementById("result").innerHTML = result;
 
 
