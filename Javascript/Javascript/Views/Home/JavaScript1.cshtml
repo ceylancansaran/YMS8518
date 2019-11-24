@@ -1,0 +1,30 @@
+﻿<!doctype html>
+<html>
+<head>
+    <script>
+        function IcerigiYazdir() {
+            document.write("bu içeriği yazdır");
+        }
+        function UyariVer() {
+            alert("bu uyarıyı popup olarak çıkart");
+        }
+        function ConsoleMesajYazdir() {
+            console.log("bu mesaj consol da görüntülenir");
+        }
+        function IcerigiDomaYazdir() {
+            document.getElementById("demo").innerHTML = "bu mesaj doma yazdırılıyor";
+        }
+    </script>
+</head>
+<body>
+    <script>IcerigiYazdir();</script>
+    <hr />
+    <input type="button" value="uyarı kutusu cikart" onclick="UyariVer()"; />
+    <br />
+    <input type="button" value="console mesaj yazdir" onclick="ConsoleMesajYazdir()"; />
+    <br />
+    <input type="button" value="doma a yazdır" onclick="IcerigiDomaYazdir()"; />
+    <br />
+    <div id = "demo">bu içerik</div>
+</body>
+</html>
