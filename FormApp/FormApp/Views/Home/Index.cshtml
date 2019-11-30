@@ -1,0 +1,76 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>Sayfa Basligi</title>
+    <script>
+        function Gonder() {
+            var fullName = $("#FullName").val();
+            var email = $("#Email").val();
+            var message = $("#Message").val();
+
+            if (fullName.length < 3 || fullName.length > 150) {
+                alert("150 den uzun girmeyelim please");
+                return;
+            }
+            else if (email.length < 6 || email.length > 345) {
+                alert("6 dan kısa 345 den uzun olmamalı");
+                return;
+
+            }
+            else if (message.length < 2 || message.length > 1024) {
+                alert("2 den kısa 1024 den uzun olmamalı");
+                return;
+            }
+
+            $("#Form").hide();
+            $("#Sending").show();
+
+            var data = {
+                FullName: fullName,
+                Email: email,
+                Message: message
+            };
+
+
+            var json = JSON.stringify(data);
+
+            $.ajax({
+                type: "POST",
+                url: "/Contact/Send",
+                data: json,
+                success: Gonder_Callback,
+                dataType: "json",
+                contentType: 'application/json'
+            });
+        }
+        function Gonder_Callback(result) {
+            $("#Sending").hide();
+            $("#Sent").show();
+            console.log(result);
+        }
+    </script>
+    <script 
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="Form">
+        <form>
+            <input type="text" id="FullName" placeholder="Adınız" />
+            <br />
+            <input type="email" id="Email" placeholder="E posta Adresiniz" />
+            <br />
+            <textarea id="Message" placeholder="Mesajınız"></textarea>
+            <br />
+            <input type="button" value="Gonder" onclick="Gonder();" />
+        </form>
+    </div>
+    <div style="display: none;" id="Sending">
+        <h3>Mesajınız Gönderiliyor</h3>
+    </div>
+    <div style="display:none;" id="Sent">
+        <h3>Mesajınız Gönderildi</h3>
+    </div>
+</body>
+</html>
