@@ -64,6 +64,45 @@
                 Send_Callback_Error: function (result) {
                     console.log(result);
                 }
+            },
+            Manage: {
+                Login: function () {
+                    var username = $("#Username").val();
+                    var password = $("#Password").val();
+
+                    if (username.length < 5 || username.length > 32) {
+                        alert("kullanıcı adı hatalı");
+                        return;
+                    }
+                    else if (password.length < 8 || password.length > 32) {
+                        alert("hatalı şifre");
+                        return;
+                    }
+
+                    var data = {
+                        Username: username,
+                        Password: password
+                    };
+
+                    var json = JSON.stringify(data);
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/GuestBook/LoginAction",
+                        data: json,
+                        success: GuestBook.Page.GuestBook.Manage.Login_CallBack,
+                        error: GuestBook.Page.GuestBook.Manage.Login_CallBack_Error,
+                        dataType: "json",
+                        contentType: "application/json;charset=utf-8"
+
+                    });
+                },
+                Login_CallBack: function (result) {
+                    window.location.href = "/GuestBook/AdminDashboard";
+                },
+                Login_CallBack_Error: function (result) {
+                    alert("Kullanıcı adı veya şifre hatalı");
+                }
             }
         }
     },

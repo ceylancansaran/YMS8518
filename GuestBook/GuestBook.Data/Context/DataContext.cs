@@ -12,6 +12,17 @@ namespace GuestBook.Data.Context
         : base(options)
         { }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().HasData(new User
+            {
+                Id = 1,
+                Username = "admin",
+                Password = "123456"
+            });
+            base.OnModelCreating(modelBuilder);
+        }
         public DbSet<GuestNote> GuestNotes { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
