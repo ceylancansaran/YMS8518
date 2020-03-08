@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sinav2", "Sinav2\Sinav2.csproj", "{B15FB2A4-FF8F-489B-B3CA-9912EB999B78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B15FB2A4-FF8F-489B-B3CA-9912EB999B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B15FB2A4-FF8F-489B-B3CA-9912EB999B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B15FB2A4-FF8F-489B-B3CA-9912EB999B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B15FB2A4-FF8F-489B-B3CA-9912EB999B78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0CA497BD-23E1-4289-93AA-CF54B72B1F8A}
+	EndGlobalSection
+EndGlobal
